@@ -30,11 +30,11 @@ public class TestServiceClient {
         ClientService clientService = new ClientService(clientDao,reservationService);
 
 
-        LocalDate date = LocalDate.parse("1980-05-02");
+        LocalDate date = LocalDate.parse("1988-03-02");
         Client client = new Client(1,
-                "toto",
-                "bal",
-                "toto@test.com",
+                "dibango",
+                "michel",
+                "micheldibango@test.com",
                 date);
 
         // Configuration du comportement du mock pour la couche DAO: retourne 0 castré en long
@@ -55,17 +55,17 @@ public class TestServiceClient {
     @Test
     void TestFindAllClient()throws ServiceException, DaoException{
 
-        LocalDate date1 = LocalDate.parse("1980-05-02");
+        LocalDate date1 = LocalDate.parse("1988-03-02");
         Client client1 = new Client(1,
-                "toto",
-                "bal",
-                "toto@test.com",
+                "dibango",
+                "michel",
+                "micheldibango@test.com",
                 date1);
         LocalDate date2 = LocalDate.parse("1998-11-02");
         Client client2 = new Client(2,
-                "tata",
-                "bal",
-                "tata@test.com",
+                "enga",
+                "franck",
+                "franckenga@test.com",
                 date2);
 
         //Création d'un mock de ma classe ClientDao
@@ -104,18 +104,18 @@ public class TestServiceClient {
         ClientDao clientDao = Mockito.mock(ClientDao.class);
         ClientService clientService = Mockito.mock(ClientService.class);
 
-        LocalDate date = LocalDate.parse("1980-05-02");
+        LocalDate date = LocalDate.parse("1988-03-02");
         Client client = new Client(1,
-                "toto",
-                "bal",
-                "toto@test.com",
+                "dibango",
+                "michel",
+                "micheldibango@test.com",
                 date);
 
         LocalDate date2 = LocalDate.parse("1998-11-02");
         Client client2 = new Client(2,
-                "tata",
-                "bal",
-                "tata@test.com",
+                "enga",
+                "franck",
+                "engafranck@test.com",
                 date2);
 
         Mockito.when(clientService.findById(client.getId())).thenReturn(client);

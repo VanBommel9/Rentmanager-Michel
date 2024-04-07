@@ -21,27 +21,27 @@ public class TestModelClient {
     @Order(1)
     public void testGetClient() {
 
-        LocalDate date = LocalDate.parse("1980-05-02");
+        LocalDate date = LocalDate.parse("1990-07-09");
         Client client = new Client(1,
-                "toto",
-                "bal",
-                "totob@test.com",
+                "destames",
+                "charles",
+                "charlesdest@test.com",
                 date);
         assertEquals(1,client.getId());
-        assertEquals("toto", client.getNom());
-        assertEquals("bal",client.getPrenom());
-        assertEquals("totob@test.com",client.getEmail());
+        assertEquals("destames", client.getNom());
+        assertEquals("charles",client.getPrenom());
+        assertEquals("charlesdest@test.com",client.getEmail());
         assertEquals(date ,client.getNaissance());
     }
 
     @Test
     @Order(2)
     public void validEmail() throws ServiceException {
-        LocalDate date = LocalDate.parse("1980-05-02");
+        LocalDate date = LocalDate.parse("1990-07-09");
         Client client = new Client(1,
-                "toto",
-                "bal",
-                "totob@test.com",
+                "destames",
+                "charles",
+                "charlesdest@test.com",
                 date);
 
         assertEquals( clientService.create(client),0);
